@@ -34,7 +34,7 @@ func TestIsDelimeter(t *testing.T) {
 
 }
 func TestSplitString(t *testing.T) {
-	var testCases [3]TestSplitStringValues
+	var testCases [2]TestSplitStringValues
 
 	testCases[0] = TestSplitStringValues{
 		inputString: "hello, world",
@@ -50,13 +50,6 @@ func TestSplitString(t *testing.T) {
 			StringFragment{value: " ", shuffle: false},
 			StringFragment{value: "ho", shuffle: true},
 			StringFragment{value: "!", shuffle: false}}}
-
-	testCases[2] = TestSplitStringValues{
-		inputString: "hello, world",
-		expected: []StringFragment{
-			StringFragment{value: "hello", shuffle: true},
-			StringFragment{value: ", ", shuffle: false},
-			StringFragment{value: "world", shuffle: true}}}
 
 	for _, testCase := range testCases {
 
