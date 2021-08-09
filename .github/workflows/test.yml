@@ -18,4 +18,4 @@ jobs:
       with:
         go-version: 1.16
     - name: Run `go test`
-      run: go test -v ../../
+      run: go test -v ./...
