@@ -3,15 +3,16 @@ name: Test REUSE compliance
 on:
   push:
     branches:
-    - master
+      - master
   pull_request:
-    branches: '**'
+    branches:
+      - '**'
 
 jobs:
   reuse:
     name: Test REUSE compliance
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run `reuse lint`
-      uses: fsfe/reuse-action@v1
+      - uses: actions/checkout@v2
+      - name: Run `reuse lint`
+        uses: fsfe/reuse-action@v1
