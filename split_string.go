@@ -15,6 +15,7 @@ func GetDelimiters() []rune {
 		'\u0023', // hash symbol
 		'\u0025', // percent sign
 		'\u0026', // ampersand
+		'\u0027', // apostrophe
 		'\u0028', // left bracket (parentheses)
 		'\u0029', // right bracket (parentheses)
 		'\u002a', // asterisk
@@ -23,7 +24,9 @@ func GetDelimiters() []rune {
 		'\u003a', // colon
 		'\u003b', // semicolon
 		'\u003f', // question mark
+		'\u0040', // at symbol
 		'\u005c', // back slash
+		'\u005f', // underscore
 		'\u2010', // hyphen
 		'\u2018', // left single quote
 		'\u2019', // right single quote
