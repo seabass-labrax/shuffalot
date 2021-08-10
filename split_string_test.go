@@ -13,20 +13,20 @@ type TestSplitStringValues struct {
 	expected    []StringFragment
 }
 
-type TestIsDelimeterValues struct {
+type TestIsDelimiterValues struct {
 	inputRune rune
 	expected  bool
 }
 
-func TestIsDelimeter(t *testing.T) {
-	var testCases [3]TestIsDelimeterValues
+func TestIsDelimiter(t *testing.T) {
+	var testCases [3]TestIsDelimiterValues
 
-	testCases[0] = TestIsDelimeterValues{inputRune: '\\', expected: true}
-	testCases[1] = TestIsDelimeterValues{inputRune: '(', expected: true}
-	testCases[2] = TestIsDelimeterValues{inputRune: 'a', expected: false}
+	testCases[0] = TestIsDelimiterValues{inputRune: '\\', expected: true}
+	testCases[1] = TestIsDelimiterValues{inputRune: '(', expected: true}
+	testCases[2] = TestIsDelimiterValues{inputRune: 'a', expected: false}
 
 	for _, testCase := range testCases {
-		actual := IsDelimeter(testCase.inputRune)
+		actual := IsDelimiter(testCase.inputRune)
 		if actual != testCase.expected {
 			t.Errorf("Test failed; %+q is a delimeter: expected %t but got %t", testCase.inputRune, testCase.expected, actual)
 		}

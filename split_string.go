@@ -8,7 +8,7 @@ type StringFragment struct {
 	shuffle bool
 }
 
-func GetDelimeters() []rune {
+func GetDelimiters() []rune {
 	return []rune{
 		'\u0020', // space
 		'\u0021', // exclamation mark
@@ -34,8 +34,8 @@ func GetDelimeters() []rune {
 	}
 }
 
-func IsDelimeter(character rune) bool {
-	delimeters := GetDelimeters()
+func IsDelimiter(character rune) bool {
+	delimeters := GetDelimiters()
 	for i := 0; i < len(delimeters); i++ {
 		if character == delimeters[i] {
 			return true
@@ -53,17 +53,17 @@ func SplitString(s string) []StringFragment {
 	// create first fragment
 	fragments = append(fragments, StringFragment{
 		value:   string(runes[0]),
-		shuffle: !IsDelimeter(runes[0]),
+		shuffle: !IsDelimiter(runes[0]),
 	})
 
 	for i := 1; i < len(runes); i++ {
 
-		if IsDelimeter(runes[i]) != fragments[currentFragment].shuffle {
+		if IsDelimiter(runes[i]) != fragments[currentFragment].shuffle {
 			// character should be added to current fragment
 			fragments[currentFragment].value = fragments[currentFragment].value + string(runes[i])
 		} else {
 			// character should be added to a new fragment
-			fragments = append(fragments, StringFragment{value: string(runes[i]), shuffle: !IsDelimeter(runes[i])})
+			fragments = append(fragments, StringFragment{value: string(runes[i]), shuffle: !IsDelimiter(runes[i])})
 			currentFragment = currentFragment + 1
 		}
 	}
