@@ -1,0 +1,38 @@
+.\" SPDX-FileCopyrightText: 2021 Sebastian Crane <seabass-labrax@gmx.com>
+.\" SPDX-License-Identifier: CC-BY-SA-4.0
+.TH SHUFFALOT 1 shuffalot\-VERSION
+.SH NAME
+shuffalot \- shuffles the letters in each word of its input
+.SH SYNOPSIS
+.B shuffalot
+.RB [ -s
+.I seed
+|
+.B --seed
+.IR seed ]
+.RB [ -V
+|
+.BR --version ]
+.SH DESCRIPTION
+.B shuffalot
+shuffles all but the first and last letters in each word of its input.
+.SH OPTIONS
+.B -s
+.IR seed ,
+.B --seed
+.I seed
+.RS 4
+sets the numerical
+.I seed
+for shuffling. If no
+.I seed
+is given, a random value provided by the operating system will be used.
+.RE
+.BR \-V ,
+.B --version
+.RS 4
+Prints the version of this build of
+.BR shuffalot .
+.SH AUTHORS
+Sebastian Crane
+.RI < seabass-labrax@gmx.com >
