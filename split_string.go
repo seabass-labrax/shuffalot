@@ -1,7 +1,7 @@
 // SPDX-FileCopyrightText: 2021 Sebastian Crane <seabass-labrax@gmx.com>
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-package shuffle_string
+package shuffalot
 
 type StringFragment struct {
 	value   string

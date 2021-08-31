@@ -1,3 +1,3 @@
-module shuffle_string
+module shuffalot
 
 go 1.16
