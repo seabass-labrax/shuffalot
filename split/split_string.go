@@ -4,8 +4,8 @@
 package split
 
 type StringFragment struct {
-	value   string
-	shuffle bool
+	Value   string
+	Shuffle bool
 }
 
 func GetDelimiters() []rune {
@@ -55,18 +55,18 @@ func SplitString(s string) []StringFragment {
 
 	// create first fragment
 	fragments = append(fragments, StringFragment{
-		value:   string(runes[0]),
-		shuffle: !IsDelimiter(runes[0]),
+		Value:   string(runes[0]),
+		Shuffle: !IsDelimiter(runes[0]),
 	})
 
 	for i := 1; i < len(runes); i++ {
 
-		if IsDelimiter(runes[i]) != fragments[currentFragment].shuffle {
+		if IsDelimiter(runes[i]) != fragments[currentFragment].Shuffle {
 			// character should be added to current fragment
-			fragments[currentFragment].value = fragments[currentFragment].value + string(runes[i])
+			fragments[currentFragment].Value = fragments[currentFragment].Value + string(runes[i])
 		} else {
 			// character should be added to a new fragment
-			fragments = append(fragments, StringFragment{value: string(runes[i]), shuffle: !IsDelimiter(runes[i])})
+			fragments = append(fragments, StringFragment{Value: string(runes[i]), Shuffle: !IsDelimiter(runes[i])})
 			currentFragment = currentFragment + 1
 		}
 	}
