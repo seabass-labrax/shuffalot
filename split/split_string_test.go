@@ -39,17 +39,17 @@ func TestSplitString(t *testing.T) {
 	testCases[0] = TestSplitStringValues{
 		inputString: "hello, world",
 		expected: []StringFragment{
-			StringFragment{value: "hello", shuffle: true},
-			StringFragment{value: ", ", shuffle: false},
-			StringFragment{value: "world", shuffle: true}}}
+			StringFragment{Value: "hello", Shuffle: true},
+			StringFragment{Value: ", ", Shuffle: false},
+			StringFragment{Value: "world", Shuffle: true}}}
 
 	testCases[1] = TestSplitStringValues{
 		inputString: "What ho!",
 		expected: []StringFragment{
-			StringFragment{value: "What", shuffle: true},
-			StringFragment{value: " ", shuffle: false},
-			StringFragment{value: "ho", shuffle: true},
-			StringFragment{value: "!", shuffle: false}}}
+			StringFragment{Value: "What", Shuffle: true},
+			StringFragment{Value: " ", Shuffle: false},
+			StringFragment{Value: "ho", Shuffle: true},
+			StringFragment{Value: "!", Shuffle: false}}}
 
 	for _, testCase := range testCases {
 
