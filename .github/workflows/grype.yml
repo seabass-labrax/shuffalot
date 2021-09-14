@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2021 Sebastian Crane <seabass-labrax@gmx.com>
+# SPDX-License-Identifier: CC0-1.0
+
+name: Check for vulnerabilities
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  grype:
+    name: Check for vulnerabilities
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Grype on repository
+        uses: anchore/scan-action@v3
+        with:
+          path: "."
+          fail-build: true
+          severity-cutoff: low
