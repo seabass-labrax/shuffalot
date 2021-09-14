@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2021 Sebastian Crane <seabass-labrax@gmx.com>
+# SPDX-License-Identifier: CC0-1.0
+
 name: Test REUSE compliance
 
 on:
