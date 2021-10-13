@@ -5,17 +5,10 @@ package shuffle
 
 import (
 	"math/rand"
-	"time"
 )
 
-func ShuffleWord(word string, seed ...int64) string {
-
-	if len(seed) > 0 {
-		rand.Seed(seed[0])
-	} else {
-		rand.Seed(time.Now().UnixNano())
-	}
-
+func ShuffleWord(word string, seed int64) string {
+	rand.Seed(seed)
 	runes := []rune(word)
 
 	// Fisher-Yates shuffle of elements
