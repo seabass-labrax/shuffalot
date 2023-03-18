@@ -10,6 +10,7 @@ type StringFragment struct {
 
 func GetDelimiters() []rune {
 	return []rune{
+		'\u0009', // tab
 		'\u0020', // space
 		'\u0021', // exclamation mark
 		'\u0022', // double quote
