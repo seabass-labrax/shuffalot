@@ -4,11 +4,13 @@
 package handle
 
 import (
+	"math/rand"
+
 	"shuffalot/shuffle"
 	"shuffalot/split"
 )
 
-func HandleLine(text string, seed int64) string {
+func HandleLine(text string, rng rand.Rand) string {
 	var output string
 
 	if len(text) == 0 {
@@ -17,7 +19,7 @@ func HandleLine(text string, seed int64) string {
 
 	for _, fragment := range split.SplitString(text) {
 		if fragment.Shuffle == true {
-			output += shuffle.ShuffleWord(fragment.Value, seed)
+			output += shuffle.ShuffleWord(fragment.Value, rng)
 		} else {
 			output += fragment.Value
 		}

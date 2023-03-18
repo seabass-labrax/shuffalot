@@ -4,6 +4,7 @@
 package shuffle
 
 import (
+	"math/rand"
 	"testing"
 )
 
@@ -23,7 +24,7 @@ func TestShuffleWord(t *testing.T) {
 
 	for _, testCase := range testCases {
 
-		actual := ShuffleWord(testCase.word, testCase.seed)
+		actual := ShuffleWord(testCase.word, *rand.New(rand.NewSource(testCase.seed)))
 
 		if actual != testCase.expected {
 			t.Errorf("Test failed: expected '%s', got '%s'", testCase.expected, actual)

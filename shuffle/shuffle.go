@@ -7,14 +7,13 @@ import (
 	"math/rand"
 )
 
-func ShuffleWord(word string, seed int64) string {
-	rand.Seed(seed)
+func ShuffleWord(word string, rng rand.Rand) string {
 	runes := []rune(word)
 
 	// Fisher-Yates shuffle of elements
 	// do not shuffle first and last element of slice
 	for i := len(runes) - 2; i > 0; i-- {
-		randomNumber := rand.Intn(i) + 1
+		randomNumber := rng.Intn(i) + 1
 		runes[randomNumber], runes[i] = runes[i], runes[randomNumber]
 	}
 

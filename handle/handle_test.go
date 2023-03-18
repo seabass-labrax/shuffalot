@@ -4,6 +4,7 @@
 package handle
 
 import (
+	"math/rand"
 	"testing"
 )
 
@@ -20,13 +21,13 @@ func TestHandleLine(t *testing.T) {
 	testCases[0] = TestHandleLineValues{
 		line:     "“The chances against anything manlike on Mars are a million to one,” he said.",
 		seed:     33,
-		expected: "“The ccnhaes anigast annythig milanke on Mras are a mililon to one,” he siad.",
+		expected: "“The cehancs ansiagt aiyhnntg mialkne on Mars are a mlilion to one,” he siad.",
 	}
 
 	testCases[1] = TestHandleLineValues{
 		line:     "When the night wind howls in the chimney cowls, and the bat in the moonlight flies,",
 		seed:     19,
-		expected: "When the ngiht wind hwols in the cmenhiy cwols, and the bat in the monhgliot files,",
+		expected: "When the nghit wnid hwlos in the cnmeihy cwlos, and the bat in the mnhooligt felis,",
 	}
 
 	testCases[2] = TestHandleLineValues{
@@ -37,7 +38,7 @@ func TestHandleLine(t *testing.T) {
 
 	for _, testCase := range testCases {
 
-		actual := HandleLine(testCase.line, testCase.seed)
+		actual := HandleLine(testCase.line, *rand.New(rand.NewSource(testCase.seed)))
 
 		if actual != testCase.expected {
 			t.Errorf("Test failed: expected '%s', got '%s'", testCase.expected, actual)
