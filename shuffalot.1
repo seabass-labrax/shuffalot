@@ -33,6 +33,12 @@ is given, a random value provided by the operating system will be used.
 .RS 4
 Prints the version of this build of
 .BR shuffalot .
+.SH KNOWN ISSUES
+.B shuffalot
+does not recognise terminal control sequences (such as coloured text)
+and combining characters (such as Unicode zero-width joiners).
+.B shuffalot
+will shuffle these, causing them to become corrupted in the output.
 .SH AUTHORS
 Sebastian Crane
 .RI < seabass-labrax@gmx.com >
